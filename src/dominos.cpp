@@ -409,6 +409,18 @@ void spiral_create(b2Vec2 w,float arc_a,float arc_b,float arc_r,bool arc_bool,fl
       ground2->CreateFixture(&shape, 0.0f);
       ground2->SetUserData(this);
     }
+    {/***************     */
+    	/**var bd ->  It is a static b2Body with a rectangular shape **/ 
+      b2PolygonShape shape;
+      shape.SetAsBox(0.1f, 0.1f);
+      b2Body* ground3;
+      b2BodyDef bd;
+      bd.position.Set(20.5f, 42.3f);
+      bd.angle = -0.00;
+      ground3 = m_world->CreateBody(&bd);
+      ground3->CreateFixture(&shape, 0.0f);
+      //ground3->SetUserData(this);
+    }
     /// Vertical plank that avoids high elasticity ball to come out of that bounded region
     {
     	/**var bd ->  It is a static b2Body with a rectangular shape **/ 
